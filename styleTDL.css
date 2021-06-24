@@ -1,0 +1,107 @@
+body
+{
+	position: absolute;
+	top:50%;
+	left:50%;
+	display: flex;
+	transform:translate(-50%,-50%);
+	width:400px;
+	padding:40px;
+	align-items: center;
+	background-color: #cccccc
+	box-sizing: border-box;
+	box-shadow:0 15px 25px rgba(0,0,0,.5);
+	border-radius:20px;
+}
+.todo-list{
+	
+	width: 350px;
+	font-family:sans-serif;
+	font-weight:bold;
+}
+.todo-list header{
+	position: relative;
+	background-color: #03a9f4;
+	padding: 10px 20px;
+	width: 100%;	
+}
+.todo-list footer{
+	margin: 0;
+	padding: 0.7cm 0;
+	border-bottom-left-radius: 1cm;
+	border-bottom-right-radius: 1cm;
+	background-color: #555555;
+}
+.todo-list .do input[type=checkbox]{
+	position : relative;
+	width: 100%
+	height:0;
+	visibility:hidden;
+}
+.todo-list .do label{
+	position: relative;
+	display:block;
+	padding:0.25em 0.5em;
+	cursor: pointer;
+	background-color: #cccccc;
+	transition: 0.5s ease-in-out;
+}
+.todo-list .do label:hover{
+	transform: translateX(-1cm);
+}
+.todo-list .do label::before{
+	content: '';
+	display: inline-block;
+	width:24px;
+	height:24px;
+	border: 1px solid #cccccc;
+	border-radius: 30%
+	vertical-align: middle;
+	margin-right: .5em;
+}
+.todo-list .do label::after{
+	content: '';
+	position:relative;
+	left: 0;
+	top:0;
+	bottom:0;
+	width:0;
+	background-color: #e11c3e;
+	transition: .3s ease-in-out;
+}
+.todo-list .do label:hover::after {
+	width:5px;
+}
+.todo-list .do label .fa-check{
+	position: absolute;
+	left: .7em;
+	top: 0.25em;
+	font-size: 1.8em;
+	color: #e11c3e;
+	opacity:0;
+	transition: 0.3s ease-in-out;	 
+}
+.todo-list .do input[type=checkbox]:checked + label .fa-check{
+	opacity: 1;
+}
+.todo-list .do label .label{
+	position: relative;
+	color:#2d3436;
+	transition: .3s ease-in-out;
+}
+.todo-list .do input[type=checkbox]:checked + label .label{
+	color: #aaaaaa;
+}
+.todo-list .do .label label::after{
+	content: '';
+	position:absolute;
+	left: 0;
+	right:100%;
+	top:50%;
+	width:1px;
+	background-color: #e11c3e;
+	transition: .3s ease-in-out;
+}
+.todo-list .do input[type=checkbox]:checked + label .label::after{
+	right:0;
+}
